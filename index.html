@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Lug'at - WordSpeaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Audio Lug'at Ilovasi</h1>
+        
+        <!-- 3-Bosqich: So'z qo'shish formasi -->
+        <div class="form-group">
+            <input type="text" id="germanWord" placeholder="Nemischa so'z (Masalan: Apfel)">
+            <input type="text" id="uzbekWord" placeholder="O'zbekcha tarjimasi (Masalan: Olma)">
+            <button onclick="addWord()">So'zni Qo'shish</button>
+        </div>
+
+        <!-- So'zlar ro'yxati -->
+        <h2>Mening lug'atim</h2>
+        <ul id="wordList"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
