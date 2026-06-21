@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Lug'at - WordSpeaker</title>
+    <title>Audio Lug'at - WordSpeaker Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,14 +11,36 @@
     <div class="container">
         <h1>Audio Lug'at Ilovasi</h1>
         
-        <!-- 3-Bosqich: So'z qo'shish formasi -->
-        <div class="form-group">
-            <input type="text" id="germanWord" placeholder="Nemischa so'z (Masalan: Apfel)">
-            <input type="text" id="uzbekWord" placeholder="O'zbekcha tarjimasi (Masalan: Olma)">
-            <button onclick="addWord()">So'zni Qo'shish</button>
+        <div class="category-filter">
+            <label for="categorySelect">Kategoriya tanlang:</label>
+            <select id="categorySelect" onchange="filterWords()">
+                <option value="all">Hamma so'zlar</option>
+                <option value="Kundalik">Kundalik muloqot</option>
+                <option value="Fe'llar">Fe'llar</option>
+                <option value="Otlar">Otlar</option>
+            </select>
         </div>
 
-        <!-- So'zlar ro'yxati -->
+        <div class="form-group">
+            <input type="text" id="germanWord" placeholder="Nemischa so'z (Masalan: Apfel)">
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <button onclick="translateWord()" class="translate-btn">⚡ Avto-Tarjima</button>
+            </div>
+
+            <input type="text" id="uzbekWord" placeholder="O'zbekcha tarjimasi (Avtomatik chiqadi)">
+            <button onclick="addWord()" class="add-btn">So'zni Lug'atga Qo'shish</button>
+        </div>
+
+        <div class="player-card">
+            <h3>Pleyer (Avto-takrorlash)</h3>
+            <div class="player-controls">
+                <button onclick="startPlaylist()" class="play-btn">▶️ Playlistni Tinglash</button>
+                <button onclick="stopPlaylist()" class="stop-btn">⏸️ To'xtatish</button>
+            </div>
+            <p id="nowPlaying">Hozir hech narsa aytilmayapti...</p>
+        </div>
+
         <h2>Mening lug'atim</h2>
         <ul id="wordList"></ul>
     </div>
